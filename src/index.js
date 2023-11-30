@@ -12,10 +12,10 @@ import { ThemeProvider } from 'styled-components';
 **/
 
 const theme = {
-  main: 'black',
-  second: 'blanchedalmond',
-  third: 'aqua',
-  hovAndFoc: 'darkcyan',
+  main: '#422040',
+  second: '#bcd8c1',
+  third: '#e57a44',
+  hovAndFoc: '#e57a44',
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
