@@ -6,14 +6,14 @@ import { Filter } from './Filter/Filter';
 import { Container, Title, SubTitle } from './App.styled';
 
 // --------------------------------------------------------------------
+const localStorageKey = 'contact-list';
 
 export const App = () => {
-  const localStorageKey = 'contact-list';
-  const savedContacts = localStorage.getItem(localStorageKey);
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = localStorage.getItem(localStorageKey);
+    return savedContacts !== null ? JSON.parse(savedContacts) : [];
+  });
 
-  const [contacts, setContacts] = useState(
-    savedContacts !== null ? JSON.parse(savedContacts) : []
-  );
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
