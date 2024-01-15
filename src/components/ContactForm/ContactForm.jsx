@@ -8,6 +8,7 @@ import {
   SubmitBtn,
 } from './ContactForm.styled';
 import * as Yup from 'yup';
+import { createGlobalStyle } from 'styled-components';
 
 const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,6 +28,7 @@ export const ContactForm = props => {
       validationSchema={ContactFormSchema}
       onSubmit={(values, actions) => {
         props.onSubmit(values);
+        console.log(values);
         actions.resetForm();
       }}
     >
